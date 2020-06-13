@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.terrariapotions.Model.ChuckNoris;
 import com.example.terrariapotions.Model.ImagePotion;
+import com.example.terrariapotions.Model.Potion;
 import com.example.terrariapotions.Model.PotionDAO;
 import com.example.terrariapotions.Model.PotionDatabase;
 import com.example.terrariapotions.Model.PotionNew;
@@ -58,8 +59,13 @@ public class PotionRepository implements IResponse {
 // This method is always called in request and never used on its own
     @Override
     public void getResponse(ChuckNoris chuckNoris) {
-       // ADDING POTIONS TO DB + UPDATING POTION IMAGE
+        // ADDING POTIONS TO DB + UPDATING POTION IMAGE
         Log.d("Repository", chuckNoris.toString());
+    }
+
+    @Override
+    public void getPotionsData(List<Potion> potions) {
+        Log.d("Repository", potions.toString());
     }
 
 //    @Override

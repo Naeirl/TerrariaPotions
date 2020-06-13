@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.terrariapotions.Model.ChuckNoris;
 import com.example.terrariapotions.Model.ImagePotion;
+import com.example.terrariapotions.Model.Potion;
 import com.example.terrariapotions.Model.PotionNew;
 import com.example.terrariapotions.R;
 import com.example.terrariapotions.Remote.ChuckNorisRequest;
@@ -19,6 +20,7 @@ import com.example.terrariapotions.View.Adapter.PotionAdapter;
 import com.example.terrariapotions.ViewModel.PotionViewModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class PotionActivity extends AppCompatActivity implements IResponse {
@@ -44,6 +46,9 @@ public class PotionActivity extends AppCompatActivity implements IResponse {
 
         ChuckNorisRequest chuckNorisRequest = new ChuckNorisRequest();
         chuckNorisRequest.getChuckNorisJoke(this);
+//        chuckNorisRequest.getPotionsData(this);
+
+
 
         //TEST
         ImagePotion potionImage = viewModel.getImagePotionByName("Healing Potion");
@@ -66,6 +71,12 @@ public class PotionActivity extends AppCompatActivity implements IResponse {
         Toast.makeText(this, chuckNoris.getValue(), Toast.LENGTH_LONG).show();
 
     }
+
+    @Override
+    public void getPotionsData(List<Potion> potions) {
+        Toast.makeText(this, potions.toString(), Toast.LENGTH_LONG).show();
+    }
+
 
 //    private void observePotion() {
 //        viewModel.getPotions().observe(this, new Observer<List<Potion>>() {
