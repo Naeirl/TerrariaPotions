@@ -1,61 +1,25 @@
 package com.example.terrariapotions.Model;
 
-import java.io.Serializable;
-import java.util.List;
 
-public class Potion implements Serializable {
-    private int id;
-    private String name;
-    private String description;
-    private String imgId;
-    private List<Ingredient> ingredients;
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-    public Potion(int id, String name, String description, String imgId, List<Ingredient> ingredients) {
+@Entity(tableName = "potions")
+public class Potion {
+
+    @PrimaryKey(autoGenerate = true)
+    @NonNull
+    public int id;
+    public String name;
+    public String description;
+    public int imgId;
+
+    public Potion(@NonNull int id, String name, String description, int imgId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.imgId = imgId;
-        this.ingredients = ingredients;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getImgId() {
-        return imgId;
-    }
-
-    public void setImgId(String imgId) {
-        this.imgId = imgId;
-    }
-
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
     }
 
     @Override
@@ -64,8 +28,23 @@ public class Potion implements Serializable {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
-                ", imgId='" + imgId + '\'' +
-                ", ingredients=" + ingredients +
+                ", imgId=" + imgId +
                 '}';
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public int getImgId() {
+        return imgId;
     }
 }

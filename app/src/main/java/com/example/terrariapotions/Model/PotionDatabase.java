@@ -1,8 +1,6 @@
 package com.example.terrariapotions.Model;
 
 import android.content.Context;
-import android.database.SQLException;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -10,12 +8,10 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
-import com.example.terrariapotions.R;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Database(entities = {Category.class, CategoryPotion.class, Ingredient.class, PotionNew.class, PotionIngredient.class, ImagePotion.class}, exportSchema = false, version = 7)
+@Database(entities = {Category.class, CategoryPotion.class, Ingredient.class, Potion.class, PotionIngredient.class, ImagePotion.class}, exportSchema = false, version = 7)
 public abstract class PotionDatabase extends RoomDatabase {
 
     public abstract PotionDAO getPotionDAO();
@@ -52,10 +48,10 @@ public abstract class PotionDatabase extends RoomDatabase {
 //            databaseWriteExecutor.execute(() -> {
 //
 //                dao.deleteAllPotions();
-//                PotionNew p = new PotionNew(5, "Healing Potion", "20% increased health", 0);
-//                PotionNew p1 = new PotionNew(6, "Archery Potion2", "20% increased arrow speed and damage", 0);
-//                PotionNew p2 = new PotionNew(7, "Archery Potion3", "20% increased arrow speed and damage", 0);
-//                PotionNew p3 = new PotionNew(8, "Archery Potion4", "20% increased arrow speed and damage", 0);
+//                Potion p = new Potion(5, "Healing Potion", "20% increased health", 0);
+//                Potion p1 = new Potion(6, "Archery Potion2", "20% increased arrow speed and damage", 0);
+//                Potion p2 = new Potion(7, "Archery Potion3", "20% increased arrow speed and damage", 0);
+//                Potion p3 = new Potion(8, "Archery Potion4", "20% increased arrow speed and damage", 0);
 //
 //                dao.insertPotion(p);
 //                dao.insertPotion(p1);

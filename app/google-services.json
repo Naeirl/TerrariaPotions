@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "120069927189",
+    "firebase_url": "https://terrariapotions.firebaseio.com",
+    "project_id": "terrariapotions",
+    "storage_bucket": "terrariapotions.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120069927189:android:feaf033dedcf9499c9b91c",
+        "android_client_info": {
+          "package_name": "com.example.terrariapotions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120069927189-e8gtg6vngandu0b31h76os08fbl5egrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGJ9xfMPP996b7379aE8F1_DuM8BEz4no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120069927189-e8gtg6vngandu0b31h76os08fbl5egrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:120069927189:android:b4a2e37d9bdadfd4c9b91c",
+        "android_client_info": {
+          "package_name": "com.example.terrariarecipes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "120069927189-e8gtg6vngandu0b31h76os08fbl5egrg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBGJ9xfMPP996b7379aE8F1_DuM8BEz4no"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "120069927189-e8gtg6vngandu0b31h76os08fbl5egrg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

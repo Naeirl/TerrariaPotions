@@ -5,13 +5,15 @@ import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
+import com.example.terrariapotions.Model.Category;
+import com.example.terrariapotions.Model.CategoryPotion;
 import com.example.terrariapotions.Model.ChuckNoris;
 import com.example.terrariapotions.Model.ImagePotion;
+import com.example.terrariapotions.Model.Ingredient;
 import com.example.terrariapotions.Model.Potion;
 import com.example.terrariapotions.Model.PotionDAO;
 import com.example.terrariapotions.Model.PotionDatabase;
-import com.example.terrariapotions.Model.PotionNew;
-import com.example.terrariapotions.R;
+import com.example.terrariapotions.Model.PotionIngredient;
 
 import java.util.List;
 
@@ -20,12 +22,14 @@ public class PotionRepository implements IResponse {
     private PotionDAO potionDAO;
     private PotionDatabase db;
     private static PotionRepository INSTANCE;
-    private LiveData<List<PotionNew>> potions;
+    private LiveData<List<Potion>> potions;
+    private LiveData<List<CategoryPotion>> categoryPotions;
 
     private PotionRepository(Application application) {
         db = PotionDatabase.getDatabase(application);
         potionDAO = db.getPotionDAO();
         potions = potionDAO.getPotions();
+//        categoryPotions = potionDAO.getCategoryPotions();
     }
 
     public static PotionRepository getInstance(Application application) {
@@ -35,11 +39,14 @@ public class PotionRepository implements IResponse {
         return INSTANCE;
     }
 
-    public LiveData<List<PotionNew>> getAllPotion() {
+    public LiveData<List<Potion>> getAllPotion() {
         return potions;
     }
+    public LiveData<List<CategoryPotion>> getAllCategoryPotions(){
+        return categoryPotions;
+    }
 
-    public void insertPotion(PotionNew potion) {
+    public void insertPotion(Potion potion) {
         PotionDatabase.databaseWriteExecutor.execute(()-> {
             potionDAO.insertPotion(potion);
         });
@@ -47,7 +54,7 @@ public class PotionRepository implements IResponse {
 
     public void updateImagePotion(int id, int imageId) {
 
-        PotionNew p = new PotionNew(id, "Healing Potion",  "20% increased health", imageId);
+        Potion p = new Potion(id, "Healing Potion",  "20% increased health", imageId);
         potionDAO.updatePotion(p);
     }
 
@@ -64,8 +71,33 @@ public class PotionRepository implements IResponse {
     }
 
     @Override
+    public void getListOfCategories(List<Category> categories) {
+        Log.d("Repository", categories.toString());
+    }
+
+    @Override
+    public void getListOfCategoryPotions(List<CategoryPotion> categoryPotions) {
+        Log.d("Repository", categoryPotions.toString());
+    }
+
+    @Override
+    public void getListOfImagePotions(List<ImagePotion> imagePotions) {
+        Log.d("Repository", imagePotions.toString());
+    }
+
+    @Override
+    public void getListOfIngredients(List<Ingredient> ingredients) {
+        Log.d("Repository", ingredients.toString());
+    }
+
+    @Override
     public void getPotionsData(List<Potion> potions) {
         Log.d("Repository", potions.toString());
+    }
+
+    @Override
+    public void getListOfPotionIngredients(List<PotionIngredient> potionIngredients) {
+        Log.d("Repository", potionIngredients.toString());
     }
 
 //    @Override

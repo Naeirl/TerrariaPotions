@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/buff_potions"
+            android:title="Buff potions" />
+
+        <item
+            android:id="@+id/recovery_potions"
+            android:title="Recovery potions" />
+
+        <item
+            android:id="@+id/flasks"
+            android:title="Flasks" />
+
+        <item
+            android:id="@+id/other_potions"
+            android:title="Other potions" />
+
+        <item
+            android:id="@+id/food_drink_potions"
+            android:title="Food and drink potions" />
+
+
+    </group>
+
+    <item android:title="Profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="Logout" />
+            </group>
+        </menu>
+    </item>
+</menu>

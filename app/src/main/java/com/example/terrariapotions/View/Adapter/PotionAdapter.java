@@ -9,16 +9,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.terrariapotions.Model.PotionNew;
+import com.example.terrariapotions.Model.Potion;
 import com.example.terrariapotions.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PotionAdapter extends RecyclerView.Adapter<PotionAdapter.ViewHolder> {
-    private ArrayList<PotionNew> potionList;
+    private ArrayList<Potion> potionList;
 
-    public PotionAdapter(ArrayList<PotionNew> potionList){
+    public PotionAdapter(ArrayList<Potion> potionList){
         this.potionList= potionList;
     }
 
@@ -33,7 +33,7 @@ public class PotionAdapter extends RecyclerView.Adapter<PotionAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        PotionNew potion = potionList.get(position);
+        Potion potion = potionList.get(position);
         holder.potionDesc.setText(potion.getDescription());
         holder.potionName.setText(potion.getName());
 
@@ -47,8 +47,8 @@ public class PotionAdapter extends RecyclerView.Adapter<PotionAdapter.ViewHolder
         return potionList.size();
     }
 
-    public void setPotionList(List<PotionNew> potions) {
-        this.potionList = (ArrayList<PotionNew>) potions;
+    public void setPotionList(List<Potion> potions) {
+        this.potionList = (ArrayList<Potion>) potions;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
